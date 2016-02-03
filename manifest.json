@@ -1,0 +1,13 @@
+{
+  "name": "contactList",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "store contact in extension",
+  "browser_action": {
+    "default_icon": "images/phone.png",
+    "default_popup": "html/index.html"
+   },
+  "permissions": [
+  	
+  ]
+}

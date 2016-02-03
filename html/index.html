@@ -1,0 +1,22 @@
+<html>
+<head>
+	<title>POPUP</title>
+	<script type="text/javascript" src="../js/angular.js"></script>
+	<script type="text/javascript" src="../js/main-controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/home.css">
+</head>
+<body ng-app='contactList' ng-controller='maincontroller'>
+	<table>
+		<tr ng-repeat='cont in contactlist'>
+			<td>{{cont.name}}</td>
+			<td>{{cont.number}}</td>
+		</tr>
+	</table>
+
+	<div>
+		<input type="text" placeholder='Name' ng-model="addName">
+		<input type="number" placeholder='Number' ng-model="addNumber">
+		<input type="button" value="Add" ng-click="addToList()">
+	</div>
+</body>
+</html>

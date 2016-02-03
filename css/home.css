@@ -1,0 +1,8 @@
+input[type="text"]{
+	width: 50%;
+	display: inline;
+}
+input[type="number"]{
+	width: 50%;
+	display: inline;
+}
