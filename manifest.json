@@ -8,6 +8,6 @@
     "default_popup": "html/index.html"
    },
   "permissions": [
-  	
+  	"storage"
   ]
 }
