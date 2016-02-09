@@ -1,10 +1,12 @@
 var module = angular.module('contactList',[]);
 module.controller('maincontroller',['$scope', function($scope){
 	$scope.contactlist = [];
-	/*if (localStorage.getItem('list')) {
+	debugger;
+	if (localStorage.getItem('list')) {
+		//if localStorage exist
 		var list = localStorage.getItem('list')
 		$scope.contactlist = JSON.parse(list);
-	};*/
+	};
 	$scope.addName = '';
 	$scope.addNumber = '';
 	$scope.addToList = function(){
@@ -19,7 +21,9 @@ module.controller('maincontroller',['$scope', function($scope){
 			/*chrome.storage.local.set({'name': 787687677575}, function(){
 				alert('stored');
 			});*/
-			localStorage.setItem('list', $scope.contactlist)	
+			debugger;
+			var str = JSON.stringify($scope.contactlist);
+			localStorage.setItem('list', str);	
 			$scope.addName = '';
 			$scope.addNumber = '';
 		};

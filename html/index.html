@@ -7,7 +7,7 @@
 </head>
 <body ng-app='contactList' ng-controller='maincontroller'>
 	<table>
-		<tr ng-repeat='cont in contactlist'>
+		<tr ng-repeat='cont in contactlist track by $index'>
 			<td>{{cont.name}}</td>
 			<td>{{cont.number}}</td>
 		</tr>
