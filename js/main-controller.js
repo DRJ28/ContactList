@@ -28,4 +28,10 @@ module.controller('maincontroller',['$scope', function($scope){
 			$scope.addNumber = '';
 		};
 	}
+	$scope.editContact = function(index){
+		console.log('contact to edit ' + index);
+	}
+	$scope.deleteContact = function(index){
+		console.log('contact to delete ' + index);
+	}
 }]);

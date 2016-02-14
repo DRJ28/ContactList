@@ -10,6 +10,8 @@
 		<tr ng-repeat='cont in contactlist track by $index'>
 			<td>{{cont.name}}</td>
 			<td>{{cont.number}}</td>
+			<td><input type="button" value="Edit" ng-click="editContact($index)"></input></td>
+			<td><input type="button" value="Delete" ng-click="deleteContact($index)"></input></td>
 		</tr>
 	</table>
 
