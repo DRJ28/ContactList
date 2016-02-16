@@ -4,7 +4,7 @@ module.controller('maincontroller',['$scope', function($scope){
 	debugger;
 	if (localStorage.getItem('list')) {
 		//if localStorage exist
-		var list = localStorage.getItem('list')
+		var list = localStorage.getItem('list');
 		$scope.contactlist = JSON.parse(list);
 	};
 	$scope.addName = '';
@@ -17,21 +17,36 @@ module.controller('maincontroller',['$scope', function($scope){
 			"number": $scope.addNumber
 		}
 		if ($scope.addName != '' && $scope.addNumber != '') {
-			$scope.contactlist.push(obj);
-			/*chrome.storage.local.set({'name': 787687677575}, function(){
-				alert('stored');
-			});*/
+			var discard = false;
+			$scope.contactlist.forEach(function(ob){
+				if (ob == obj) {
+					discard = true;
+					return;
+				}
+			});
+			if (!discard) {
+				$scope.contactlist.push(obj);	
+			}
+			
 			debugger;
-			var str = JSON.stringify($scope.contactlist);
-			localStorage.setItem('list', str);	
+			$scope.saveToLocalStorage();
 			$scope.addName = '';
 			$scope.addNumber = '';
 		};
 	}
 	$scope.editContact = function(index){
 		console.log('contact to edit ' + index);
+		$scope.addNumber = $scope.contactlist[index].number;
+		$scope.addName = $scope.contactlist[index].name
 	}
 	$scope.deleteContact = function(index){
 		console.log('contact to delete ' + index);
+		debugger;
+		$scope.contactlist.splice(index,1);
+		$scope.saveToLocalStorage();
+	}
+	$scope.saveToLocalStorage = function(){
+		var str = JSON.stringify($scope.contactlist);
+		localStorage.setItem('list', str);	
 	}
 }]);

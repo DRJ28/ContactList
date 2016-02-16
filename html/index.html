@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/home.css">
 </head>
 <body ng-app='contactList' ng-controller='maincontroller'>
+	<label>Search: <input ng-model="searchText"></label>
 	<table>
 		<tr ng-repeat='cont in contactlist track by $index'>
 			<td>{{cont.name}}</td>
